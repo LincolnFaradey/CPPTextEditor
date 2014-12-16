@@ -181,7 +181,7 @@ void TextEditor::count_words() {
     }
 
     map<string, int> amount_of_words = help_count(tmp, all_words);
-    hlib::print2_map(amount_of_words);
+    hlib::print_map(amount_of_words);
 }
 
 map<string, int> TextEditor::help_count(set<string>& set_, list<string>& words) {
@@ -218,17 +218,10 @@ namespace hlib {
         }
     }
 
-    void print_map(map<int, string>& map_) {
-        map<int, string>::iterator map_it;
+    template<typename K, typename V> void print_map(map<K, V>& map_) {
+        typename map<K, V>::iterator map_it;
         for (map_it = map_.begin(); map_it != map_.end(); ++map_it) {
-            cout << "Line #" << map_it->first << " : Prase - " << map_it->second << endl;
-        }
-    }
-
-    void print2_map(map<string, int>& map_) {
-        map<string, int>::iterator map_it;
-        for (map_it = map_.begin(); map_it != map_.end(); ++map_it) {
-            cout << map_it->first << " | #" << map_it->second << endl;
+            cout << "Key :" << map_it->first << " : Value " << map_it->second << endl;
         }
     }
 

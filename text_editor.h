@@ -60,10 +60,8 @@ private:
 namespace hlib {
     void fill_map(list<string>& container, map<int, string>& map_, string& word);
 
-    void print_map(map<int, string>& map_);
-
-    void print2_map(map<string, int>& map_);
-
+    template<typename K, typename V> void print_map(map<K, V>& map_);
+    
     vector<int> parseRequest(string& request);
 
     std::vector<std::string>& split(const std::string &s, char delim, std::vector<std::string> &elems);
